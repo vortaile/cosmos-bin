@@ -63,13 +63,47 @@ Key design decisions:
 | File typing | python-magic | 0.4.27 | Magic byte and MIME detection |
 | Secret storage | keyring | latest | Secure API key storage in OS keychain |
 | Packaging | PyInstaller | latest | Single-file executable bundling |
-| CI/CD | GitHub Actions | N/A | Automated cross-platform build and release |
+| Build automation | GitHub Actions | N/A | Cross-platform build, test, release pipeline |
+| Distribution | GitHub Releases | N/A | Binary distribution with SHA-256 verification |
+
+## Python Standard Library Usage
+
+| Module | Purpose |
+|--------|---------|
+| `hashlib` | MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashing |
+| `mmap` | Memory-mapped file loading for large binaries |
+| `struct` | Binary structure parsing |
+| `json` | Structured report and audit log serialization |
+| `logging` | Rotating file and console logging |
+| `multiprocessing` | Parallel YARA scanning worker |
+| `threading` | Background analysis tasks |
+| `socket`, `getpass` | Audit log host and user metadata |
+| `pathlib` | Cross-platform path handling |
+| `datetime`, `timezone` | UTC timestamp for audit trail |
+
+## YARA Rule Categories
+
+COSMOS bundles 500+ YARA rules organized into 22 categories:
+
+| Category | Focus |
+|----------|-------|
+| Antidebug / Antivm | Anti-analysis and VM-detection techniques |
+| Capabilities | Malware capability detection |
+| Crypto | Cryptographic algorithm and library detection |
+| CVE rules | Known vulnerability exploitation patterns |
+| Exploit kits | Exploit kit families |
+| Maldocs | Malicious documents (Office, PDF) |
+| Email | Phishing and malicious email artifacts |
+| Deprecated | Retired rules kept for reference |
+
+Plus coverage for ransomware families, webshells, packers, loaders, and infostealers.
 
 ## Module Breakdown
 
 | Module | Responsibility |
 |--------|---------------|
 | Analysis Engine | Orchestrates the full analysis pipeline |
+| File Loader | Memory-mapped loading with size limits |
 | Hash Analyzer | Computes MD5, SHA-1, SHA-256, SHA-384, SHA-512, imphash |
 | Signature Checker | Validates magic bytes and Authenticode chains |
 | PE Analyzer | Parses PE structure and flags anomalies |
@@ -81,6 +115,7 @@ Key design decisions:
 | Verdict Engine | Combines signals into a 0-100 risk score |
 | Audit Logger | Writes immutable chain-of-custody JSON Lines log |
 | Report Exporter | Exports to JSON, HTML, PDF, CSV ZIP, TXT |
+| Config Manager | Persists user preferences and API key settings |
 
 ## Requirements
 
