@@ -2,7 +2,7 @@
 
 <img src="assets/COSMOS.png" alt="COSMOS Logo" width="120">
 
-**Static Malware Analysis for Windows PE Files**
+**COSMOS (Comprehensive Offline Static Malware Observation System) - Static Malware Analysis for Windows PE Files**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows_10/11-blue.svg)](https://github.com/vortaile/cosmos-bin/releases)
