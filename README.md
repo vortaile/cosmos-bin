@@ -1,6 +1,14 @@
+<div align="center">
+
+<img src="assets/COSMOS.png" alt="COSMOS Logo" width="120">
+
 # COSMOS
 
 **Static Malware Analysis for Windows PE Files**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+</div>
 
 COSMOS is a desktop application for static forensic analysis of Windows Portable Executable (PE) files. It runs fully offline, so samples are never uploaded to third-party servers. Built for security analysts, malware researchers, and digital forensics investigators performing initial triage.
 
@@ -31,7 +39,7 @@ COSMOS is a desktop application for static forensic analysis of Windows Portable
 
 1. Download the binary for your operating system from the Releases page.
 2. Run it directly. No installation needed.
-3. Drag and drop any Windows PE file (.exe, .dll, .sys, .scr, .ocx) onto the welcome screen, or use Open PE File.
+3. Drag and drop any Windows PE file (.exe, .dll, .sys, .scr, .ocx, etc.) onto the welcome screen, or use Open PE File.
 4. Review results across the tabs and export the report.
 
 ## Usage
@@ -64,4 +72,12 @@ Checksums are published with each release.
 
 ## License
 
-MIT License. See the LICENSE file.
+COSMOS is released under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Arizha (vortaile)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
