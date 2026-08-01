@@ -12,6 +12,17 @@
 [![Release: v1.1.4](https://img.shields.io/badge/Release-v1.1.4-brightgreen.svg)](https://github.com/vortaile/cosmos-bin/releases/tag/v1.1.4)
 [![Release Date](https://img.shields.io/badge/Release_Date-2026--07--31-lightgrey.svg)](https://github.com/vortaile/cosmos-bin/releases/tag/v1.1.4)
 
+**Built with**
+
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![PySide6](https://img.shields.io/badge/PySide6-6.7.2-41CD52?style=flat&logo=qt&logoColor=white)](https://doc.qt.io/qtforpython/)
+[![Qt6](https://img.shields.io/badge/Qt-6-41CD52?style=flat&logo=qt&logoColor=white)](https://www.qt.io/)
+[![YARA](https://img.shields.io/badge/YARA-4.5.1-red?style=flat)](https://virustotal.github.io/yara/)
+[![pefile](https://img.shields.io/badge/pefile-2024.8.26-blue?style=flat)](https://github.com/erocarrera/pefile)
+[![cryptography](https://img.shields.io/badge/cryptography-44.0.0-black?style=flat)](https://cryptography.io/)
+[![httpx](https://img.shields.io/badge/httpx-0.27.2-blue?style=flat)](https://www.python-httpx.org/)
+[![PyInstaller](https://img.shields.io/badge/PyInstaller-6.x-FF6B6B?style=flat)](https://pyinstaller.org/)
+
 </div>
 
 COSMOS is a desktop application for static forensic analysis of Windows Portable Executable (PE) files. It runs fully offline, so samples are never uploaded to third-party servers. Built for security analysts, malware researchers, and digital forensics investigators performing initial triage.
