@@ -31,7 +31,7 @@ COSMOS is a desktop application for static forensic analysis of Windows Portable
 
 1. Download the binary for your operating system from the Releases page.
 2. Run it directly. No installation needed.
-3. Drag and drop a `.exe` or `.dll` file onto the welcome screen, or use Open PE File.
+3. Drag and drop any Windows PE file (.exe, .dll, .sys, .scr, .ocx) onto the welcome screen, or use Open PE File.
 4. Review results across the tabs and export the report.
 
 ## Usage
