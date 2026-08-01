@@ -20,13 +20,63 @@ COSMOS is a desktop application for static forensic analysis of Windows Portable
 - **Entropy analysis**: per-section Shannon entropy to detect packing and obfuscation
 - **String extraction**: ASCII and Unicode strings with length filtering
 - **Indicator of Compromise detection**: IPs, URLs, domains, emails, registry keys, and file paths with confidence levels
-- **YARA scanning**: 500+ bundled rules covering APT groups, ransomware, exploit kits, webshells, and packers
+- **YARA scanning**: 500+ bundled rules covering APT groups, ransomware, exploit kits, webshells, packers, crypto miners, and maldocs
 - **Threat intelligence integration**: optional VirusTotal lookup with rate limiting and local caching
 - **Verdict engine**: weighted heuristic scoring from 0 to 100 with four risk levels (CLEAN, LOW, SUSPICIOUS, MALICIOUS)
 - **MITRE ATT&CK mapping**: technique identification and Cyber Kill Chain phase classification
 - **Audit trail**: immutable JSON Lines chain-of-custody log with before and after file hashes
 - **Report export**: JSON, HTML, PDF, CSV ZIP, and TXT with IOC defanging
 - **Dark GUI**: four-tab workflow with hex viewer and live progress feedback
+
+## Architecture
+
+COSMOS follows a modular pipeline design. Each analysis stage is an independent module that feeds results into the next, ending with a unified verdict:
+
+```
+File Load -> Hash -> Signature -> PE Parse -> Entropy -> Strings -> IoC -> YARA -> Metadata
+    -> Threat Intel (optional) -> Verdict Engine -> Report
+```
+
+Key design decisions:
+
+- **Modular analyzers**: every analysis stage is a standalone module, easy to extend or replace
+- **Offline-first**: all analysis runs locally; VirusTotal is opt-in per analysis
+- **Chain of custody**: hashes are computed before and after analysis to verify sample integrity
+- **Portable**: single-file executable, no installation, no system modification
+
+## Technology Stack
+
+| Layer | Technology | Version | Purpose |
+|-------|-----------|---------|---------|
+| Language | Python | 3.12 | Core application logic |
+| GUI framework | PySide6 (Qt 6) | 6.7.2 | Desktop interface, dark theme, tabs |
+| Web engine | QtWebEngine | bundled | Hex viewer rendering and PDF export |
+| PE parsing | pefile | 2024.8.26 | DOS/NT header, section, import, export parsing |
+| YARA engine | yara-python | 4.5.1 | Signature-based malware rule scanning |
+| Crypto | cryptography | 44.0.0 | Authenticode certificate chain verification |
+| HTTP client | httpx | 0.27.2 | VirusTotal API v3 integration |
+| HTTP client | requests | 2.32.3 | Legacy HTTP support |
+| File typing | python-magic | 0.4.27 | Magic byte and MIME detection |
+| Secret storage | keyring | latest | Secure API key storage in OS keychain |
+| Packaging | PyInstaller | latest | Single-file executable bundling |
+| CI/CD | GitHub Actions | N/A | Automated cross-platform build and release |
+
+## Module Breakdown
+
+| Module | Responsibility |
+|--------|---------------|
+| Analysis Engine | Orchestrates the full analysis pipeline |
+| Hash Analyzer | Computes MD5, SHA-1, SHA-256, SHA-384, SHA-512, imphash |
+| Signature Checker | Validates magic bytes and Authenticode chains |
+| PE Analyzer | Parses PE structure and flags anomalies |
+| Entropy Analyzer | Computes per-section Shannon entropy |
+| String Extractor | Extracts ASCII and Unicode strings |
+| IoC Detector | Detects IPs, URLs, domains, emails, registry keys, file paths |
+| YARA Scanner | Scans against 500+ rules in 22 categories |
+| VirusTotal Client | Optional cloud lookup with rate limiting |
+| Verdict Engine | Combines signals into a 0-100 risk score |
+| Audit Logger | Writes immutable chain-of-custody JSON Lines log |
+| Report Exporter | Exports to JSON, HTML, PDF, CSV ZIP, TXT |
 
 ## Requirements
 
@@ -74,7 +124,7 @@ Checksums are published with each release.
 
 COSMOS is released under the [MIT License](LICENSE).
 
-Copyright (c) 2026 Arizha (vortaile)
+Copyright (c) 2026 Arizha Praja Wirakusuma
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
