@@ -2,15 +2,13 @@
 
 <img src="assets/COSMOS.png" alt="COSMOS Logo" width="120">
 
-# COSMOS
-
 **Static Malware Analysis for Windows PE Files**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows_10/11-blue.svg)](https://github.com/vortaile/cosmos-bin/releases)
 [![Platform: Linux](https://img.shields.io/badge/Platform-Linux_x64-blue.svg)](https://github.com/vortaile/cosmos-bin/releases)
 [![Release: v1.1.4](https://img.shields.io/badge/Release-v1.1.4-brightgreen.svg)](https://github.com/vortaile/cosmos-bin/releases/tag/v1.1.4)
-[![Release Date](https://img.shields.io/badge/Release_Date-2026--07--31-lightgrey.svg)](https://github.com/vortaile/cosmos-bin/releases/tag/v1.1.4)
+[![Release Date](https://img.shields.io/badge/Release_Date-2026--08--01-lightgrey.svg)](https://github.com/vortaile/cosmos-bin/releases/tag/v1.1.4)
 
 **Built with**
 
