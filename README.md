@@ -21,7 +21,7 @@
 [![pefile](https://img.shields.io/badge/pefile-2024.8.26-blue?style=flat)](https://github.com/erocarrera/pefile)
 [![cryptography](https://img.shields.io/badge/cryptography-44.0.0-black?style=flat)](https://cryptography.io/)
 [![httpx](https://img.shields.io/badge/httpx-0.27.2-blue?style=flat)](https://www.python-httpx.org/)
-[![PyInstaller](https://img.shields.io/badge/PyInstaller-6.x-FF6B6B?style=flat)](https://pyinstaller.org/)
+[![PyInstaller](https://img.shields.io/badge/PyInstaller-6.20.0-FF6B6B?style=flat)](https://pyinstaller.org/)
 
 </div>
 
